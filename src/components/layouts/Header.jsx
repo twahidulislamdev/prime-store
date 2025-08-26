@@ -26,7 +26,7 @@ const Header = () => {
       <div className="py-5 ">
         <Container>
           <Flex className={"justify-between items-center"}>
-            <h4 className="text-[32px] font-bold">Exclusive</h4>
+            <h4 className="text-[30px] font-bold">Prime Store</h4>
             <ul className="flex gap-x-10">
               <li className="text-base ">Home</li>
               <li className="text-base ">About</li>
@@ -34,6 +34,7 @@ const Header = () => {
               <li className="text-base ">Sign Up</li>
             </ul>
             <div className="flex justify-center items-center">
+              {/* Search part Start  */}
               <div className="relative flex justify-center items-center mr-3">
                 <input
                   className=" py-1.5 px-5 outline-1 outline-gray-200 bg-[#F5F5F5]"
@@ -43,6 +44,7 @@ const Header = () => {
                 />
                 <FiSearch className="absolute right-5 text-xl " />
               </div>
+              {/* Search part End  */}
               <FiHeart className=" text-xl mr-3" />
               <FiShoppingCart  className=" text-xl " />
             </div>
