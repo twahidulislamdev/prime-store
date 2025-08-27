@@ -1,12 +1,13 @@
 import React from 'react'
 import Banner from '../layouts/Banner'
-import Catagories from '../layouts/Catagories'
+import Categories from '../layouts/Categories'
+
 
 const Home = () => {
   return (
     <>
     <Banner/>
-    <Catagories/>
+    <Categories/>
     </>
   )
 }
