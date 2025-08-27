@@ -4,7 +4,7 @@ import CategoryItem from "../CategoryItem";
 import Phones from "/src/assets/phones.png";
 import Laptops from "/src/assets/laptops.png";
 import Tablets from "/src/assets/tablets.png";
-import Watchs from "/src/assets/Watchs.png";
+import Watchs from "/src/assets/watchs.png";
 import Camera from "/src/assets/camera.png";
 import EarBuds from "/src/assets/earBuds.png";
 import Gaming from "/src/assets/gaming.png";
