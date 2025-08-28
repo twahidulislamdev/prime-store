@@ -1,6 +1,7 @@
 import React from 'react'
 import Banner from '../layouts/Banner'
 import Categories from '../layouts/Categories'
+import BestSelling from '../layouts/BestSelling'
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
     <>
     <Banner/>
     <Categories/>
+    <BestSelling/>
     </>
   )
 }

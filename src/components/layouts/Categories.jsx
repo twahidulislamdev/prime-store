@@ -31,7 +31,7 @@ const Categories = () => {
   };
   return (
     <>
-      <div className="py-[50px]">
+      <div className="py-[90px]">
         <Container>
           {/* Top small Heading Start  */}
           <div className="flex justify-start items-center space-x-2">
@@ -42,8 +42,8 @@ const Categories = () => {
           </div>
           {/* Top small Heading End  */}
           {/* Category part title start */}
-          <div className="flex justify-between items-center">
-            <h3 className="text-[35px] font-semibold pt-5">
+          <div className="flex justify-between items-center pt-5">
+            <h3 className="text-[35px] font-semibold ">
               Browse By Category
             </h3>
             {/* <div className="flex space-x-2">
