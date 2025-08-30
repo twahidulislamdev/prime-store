@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../Container";
 import Flex from "../Flex";
 import Image from "../Image";
@@ -8,6 +7,8 @@ import BannerThree from "/src/assets/bannerThree.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import PhoneDropDown from "./PhoneDropDown";
+import LaptopDropDown from "./LaptopDropDown";
 
 const Banner = () => {
   var settings = {
@@ -19,6 +20,7 @@ const Banner = () => {
     autoplay: true,
     autoplaySpeed: 3500,
   };
+
   return (
     <>
       <div className="py-5">
@@ -26,8 +28,14 @@ const Banner = () => {
           <Flex className={"justify-between "}>
             {/* Left Part Start  */}
             <div className="w-[20%]">
-              <ul className="space-y-4">
-                <li className="text-lg">Woman’s Fashion</li>
+              <div className="space-y-4 pr-5">
+                {/* First Item Start  */}
+                <PhoneDropDown/>
+                {/* First Item End  */}
+                {/* First Item Start  */}
+                <LaptopDropDown/>
+                {/* First Item End  */}
+                
                 <li className="text-lg">Men’s Fashion</li>
                 <li className="text-lg">Electronics</li>
                 <li className="text-lg">Home & Lifestyle</li>
@@ -37,7 +45,7 @@ const Banner = () => {
                 <li className="text-lg">Groceries & Pets</li>
                 <li className="text-lg">Health & Beauty</li>
                 <li className="text-lg">Health & Beauty</li>
-              </ul>
+              </div>
             </div>
             {/* Left Part End  */}
 

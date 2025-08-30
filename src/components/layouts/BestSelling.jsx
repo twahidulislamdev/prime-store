@@ -28,7 +28,7 @@ const BestSelling = () => {
               <Product
                 title={"Galaxy S25 Ultra 5G"}
                 price={"210000"}
-                productColor={"Black"}
+                // productColor={"Black"}
                 imgSrc={TitaniumBlack}
                 badgeText={"10%"}
                 badgeClassName={"bg-black text-white"}
