@@ -48,12 +48,13 @@ const BestSelling = () => {
                 badgeClassName={"bg-black text-white"}
               />
               <Product
-                title={"Galaxy S25 Ultra 5G"}
+                title={"Galaxy S25+"}
                 price={"210000"}
                 imgSrc={TitaniumBlack}
-                badgeText={"10%"}
+                badgeText={"20%"}
                 badgeClassName={"bg-black text-white"}
               />
+              
             </Flex>
           </div>
         </Container>
