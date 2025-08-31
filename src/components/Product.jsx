@@ -12,7 +12,7 @@ const Product = ({
 }) => {
   return (
     <>
-      <div className="w-[24%] relative group bg-white ">
+      <div className=" relative group bg-white ">
         <div className="relative w-full h-[330px] bg-white ">
           {/* Default Image */}
           <img
