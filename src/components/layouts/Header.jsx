@@ -4,6 +4,7 @@ import Flex from "../Flex";
 import { FiSearch, FiHeart, FiShoppingCart } from "react-icons/fi";
 import { GoPerson } from "react-icons/go";
 import { Link } from "react-router-dom";
+import { ImCross } from "react-icons/im";
 
 const Header = () => {
   let [isExpand, setExpand] = useState(false);
@@ -41,7 +42,7 @@ const Header = () => {
                 <Link to={"/about"}>
                   <li className="text-base ">About</li>
                 </Link>
-                
+
                 <li className="text-base ">Contact</li>
                 <li className="text-base ">Sign Up</li>
               </ul>
@@ -65,18 +66,24 @@ const Header = () => {
                 />
               </div>
             </Flex>
+            {isExpand && (
+              <div className="absolute top-15 right-0 z-10 w-[450px] h-[600px] bg-gray-100 ">
+                <div className="flex justify-between border-b-2 border-gray-200 pb-3 mb-5 px-10 mt-10">
+                  <h3 className="text-2xl font-semibold mb-5">Shopping Cart</h3>
+                  <ImCross
+                    className=" text-lg hover:cursor-pointer"
+                    onClick={() => setExpand(false)}
+                  />
+                </div>
+                <div className="flex justify-between px-10">
+                  <h6 className="text-lg font-semibold">Items</h6>
+                  <p className="text-base text-amber-600 font-medium">Clear All</p>
+                </div>
+              </div>
+            )}
           </Container>
         </div>
         {/* Header Lower Part End  */}
-
-        {isExpand && (
-          <div className="absolute top-40 right-0 z-10 w-[400px] h-screen bg-gray-200 p-10 ">
-            <div className="flex justify-between">
-              <h6>Samsung Galaxy S25 ultra</h6>
-              <p>01</p>
-            </div>
-          </div>
-        )}
       </div>
     </>
   );

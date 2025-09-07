@@ -12,7 +12,7 @@ const Shop = () => {
       let data = await axios.get(
         "https://twahidulislamdev.github.io/product-aip/data/products/index.json"
       );
-      setMyProduct(data.data.data);
+      setMyProduct(data.data.products);
       console.log(data.data.data);
     }
     allDatas();
