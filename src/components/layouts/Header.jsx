@@ -31,7 +31,11 @@ const Header = () => {
         <div className="py-5 ">
           <Container>
             <Flex className={"justify-between items-center"}>
-              <h4 className="text-[30px] font-bold">Prime Store</h4>
+              {/* Header logo part Start */}
+              <h3 className="text-[30px] font-bold">Prime Store</h3>
+              {/* Header logo part End */}
+
+              {/* Header Menu part Start */}
               <ul className="flex gap-x-10">
                 <Link to={"/"}>
                   <li className="text-base ">Home</li>
@@ -46,6 +50,9 @@ const Header = () => {
                 <li className="text-base ">Contact</li>
                 <li className="text-base ">Sign Up</li>
               </ul>
+              {/* Header Menu part End */}
+
+              {/* Header Icon Part Start */}
               <div className="flex justify-center items-center">
                 {/* Search part Start  */}
                 <div className="relative flex justify-center items-center mr-3">
@@ -65,6 +72,7 @@ const Header = () => {
                   onClick={() => setExpand(!isExpand)}
                 />
               </div>
+              {/* Header Icon Part End */}
             </Flex>
             {isExpand && (
               <div className="absolute top-15 right-0 z-10 w-[450px] h-[600px] bg-gray-100 ">
@@ -77,7 +85,9 @@ const Header = () => {
                 </div>
                 <div className="flex justify-between px-10">
                   <h6 className="text-lg font-semibold">Items</h6>
-                  <p className="text-base text-amber-600 font-medium">Clear All</p>
+                  <p className="text-base text-amber-600 font-medium">
+                    Clear All
+                  </p>
                 </div>
               </div>
             )}
