@@ -13,12 +13,12 @@ const Product = ({
   return (
     <>
       <div className=" relative group bg-white ">
-        <div className="relative w-full h-[330px] bg-white ">
+        <div className="relative w-full h-[330px] bg-white">
           {/* Default Image */}
           <img
             src={imgSrc}
             alt={imgAlt}
-            className="w-full h-[330px] pb-5 border-2 border-gray-200  object-cover transition-opacity duration-300 "
+            className="w-full h-[330px] pb-5 border-2 border-gray-200  object-cover transition-opacity duration-300"
           />
           <div className="absolute py-3 space-y-3  bottom-0 left-0 w-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out hover:cursor-pointer bg-black ">
             <p className="text-white text-center">Add to Cart </p>

@@ -7,9 +7,9 @@ import BestSelling from '../layouts/BestSelling'
 const Home = () => {
   return (
     <>
-    <Banner/>
-    <Categories/>
-    <BestSelling/>
+      <Banner />
+      <Categories />
+      <BestSelling />
     </>
   )
 }
