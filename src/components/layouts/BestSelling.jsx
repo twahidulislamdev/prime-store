@@ -39,7 +39,7 @@ const BestSelling = () => {
               </h6>
             </div>
             <div className="flex justify-between items-center pt-5">
-              <h3 className="text-[35px] font-semibold ">
+              <h3 className="text-[25px] lg:text-[35px] font-semibold ">
                 Best Selling Products
               </h3>
               <div className="w-[100px] py-2 bg-mainColor space-x-2 rounded-sm">

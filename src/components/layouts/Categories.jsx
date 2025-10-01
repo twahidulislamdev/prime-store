@@ -13,116 +13,106 @@ import PowerBank from "/src/assets/powerBank.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import Flex from "../Flex";
 import NextArrow from "../NextArrow";
 import PrevArrow from "../PrevArrow";
 
 const Categories = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 300,
+    speed: 400,
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3500,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 1280, // xl
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 1024, // lg
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768, // md
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 640, // sm
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480, // xs / mobile
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
-  return (
-    <>
-      <div className="py-[90px]">
-        <Container>
-          {/* Top small Heading Start  */}
-          <div className="flex justify-start items-center space-x-2">
-            <div className="w-4 h-7 bg-mainColor rounded-sm"></div>
-            <h6 className="text-base text-mainColor font-semibold">
-              Categories
-            </h6>
-          </div>
-          {/* Top small Heading End  */}
-          {/* Category part title start */}
-          <div className="flex justify-between items-center pt-5">
-            <h3 className="text-[35px] font-semibold ">
-              Browse By Category
-            </h3>
-            {/* <div className="flex space-x-2">
-              <PrevArrow />
-              <NextArrow />
-            </div> */}
-          </div>
-          {/* Category part title End */}
 
-          <div className="mt-10">
-            <Slider className="pb-5" {...settings}>
-              <div>
-                <CategoryItem
-                  imgSrc={Phones}
-                  imgAlt={"items"}
-                  categoryName={"Phones"}
-                />
-              </div>
-              <div className="">
-                <CategoryItem
-                  imgSrc={Laptops}
-                  imgAlt={"items"}
-                  categoryName={"Laptops"}
-                />
-              </div>
-              <div className="">
-                <CategoryItem
-                  imgSrc={Tablets}
-                  imgAlt={"items"}
-                  categoryName={"Tablets"}
-                />
-              </div>
-              <div className="">
-                <CategoryItem
-                  imgSrc={Watchs}
-                  imgAlt={"items"}
-                  categoryName={"Watchs"}
-                />
-              </div>
-              <div className="">
-                <CategoryItem
-                  imgSrc={Camera}
-                  imgAlt={"items"}
-                  categoryName={"Camera"}
-                />
-              </div>
-              <div className="">
-                <CategoryItem
-                  imgSrc={EarBuds}
-                  imgAlt={"items"}
-                  categoryName={"EarBuds"}
-                />
-              </div>
-              <div className="">
-                <CategoryItem
-                  imgSrc={Gaming}
-                  imgAlt={"items"}
-                  categoryName={"Gaming"}
-                />
-              </div>
-              <div className="">
-                <CategoryItem
-                  imgSrc={Speakers}
-                  imgAlt={"items"}
-                  categoryName={"Speakers"}
-                />
-              </div>
-              <div className="">
-                <CategoryItem
-                  imgSrc={PowerBank}
-                  imgAlt={"items"}
-                  categoryName={"Power Bank"}
-                />
-              </div>
-            </Slider>
-          </div>
-        </Container>
-      </div>
-    </>
+  return (
+    <section className="py-16 sm:py-20 md:py-24">
+      <Container>
+        {/* Top small Heading */}
+        <div className="flex items-center space-x-2">
+          <div className="w-3 h-6 sm:w-4 sm:h-7 bg-mainColor rounded-sm"></div>
+          <h6 className="text-sm sm:text-base text-mainColor font-semibold">
+            Categories
+          </h6>
+        </div>
+
+        {/* Section Title */}
+        <div className="flex justify-between items-center pt-4 sm:pt-6">
+          <h3 className="text-2xl sm:text-3xl md:text-[35px] font-semibold">
+            Browse By Category
+          </h3>
+        </div>
+
+        {/* Slider */}
+        <div className="mt-8 sm:mt-10">
+          <Slider className="pb-5" {...settings}>
+            <div>
+              <CategoryItem imgSrc={Phones} imgAlt="items" categoryName="Phones" />
+            </div>
+            <div>
+              <CategoryItem imgSrc={Laptops} imgAlt="items" categoryName="Laptops" />
+            </div>
+            <div>
+              <CategoryItem imgSrc={Tablets} imgAlt="items" categoryName="Tablets" />
+            </div>
+            <div>
+              <CategoryItem imgSrc={Watchs} imgAlt="items" categoryName="Watchs" />
+            </div>
+            <div>
+              <CategoryItem imgSrc={Camera} imgAlt="items" categoryName="Camera" />
+            </div>
+            <div>
+              <CategoryItem imgSrc={EarBuds} imgAlt="items" categoryName="EarBuds" />
+            </div>
+            <div>
+              <CategoryItem imgSrc={Gaming} imgAlt="items" categoryName="Gaming" />
+            </div>
+            <div>
+              <CategoryItem imgSrc={Speakers} imgAlt="items" categoryName="Speakers" />
+            </div>
+            <div>
+              <CategoryItem imgSrc={PowerBank} imgAlt="items" categoryName="Power Bank" />
+            </div>
+          </Slider>
+        </div>
+      </Container>
+    </section>
   );
 };
 
