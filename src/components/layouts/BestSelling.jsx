@@ -9,14 +9,7 @@ import Slider from "react-slick";
 const BestSelling = () => {
   let [myProduct, setMyProduct] = useState([]);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 2,
-    autoplay: true,
-  };
+  
 
   useEffect(() => {
     async function allDatas() {
@@ -49,19 +42,19 @@ const BestSelling = () => {
               </div>
             </div>
           </div>
-          <div className="mt-5 ">
-            <Slider {...settings}>
+          <div className="mt-5 flex justify-center lg:justify-between  items-center  lg:gap- flex-wrap">
               {myProduct.map((item) => (
                 <div key={item.id}>
-                  <Product
-                    title={item.title}
-                    price={item.price}
-                    // productColor={"Black"}
-                    imgSrc={item.image}
-                  />
+                  <div className="">
+                    <Product
+                      title={item.title}
+                      price={item.price}
+                      // productColor={"Black"}
+                      imgSrc={item.image}
+                    />
+                  </div>
                 </div>
               ))}
-            </Slider>
           </div>
         </Container>
       </div>

@@ -47,7 +47,7 @@ const Header = () => {
         <Container>
           <Flex className="justify-between items-center">
             <Link to={"/"}>
-              <h3 className="text-2xl font-bold">Prime <span className="text-red-500">Store</span></h3>
+              <h3 className="text-2xl font-bold">Prime <span className="text-mainColor">Store</span></h3>
             </Link>
             <ul className="flex items-center gap-x-15 xl:gap-x-10">
               {menuItems.map((item, idx) => (

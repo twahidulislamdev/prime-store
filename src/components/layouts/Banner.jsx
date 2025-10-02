@@ -37,7 +37,7 @@ const Banner = () => {
   };
 
   return (
-    <section className="py-5 md:py-5 lg:py-5 overflow-hidden flex justify-center m-auto">
+    <section className="py-5 md:py-5 lg:py-5 overflow-hidden flex justify-center m-auto ">
       <Container>
         <Flex className="flex-col md:flex-col lg:flex-row lg:gap-6 ">
           {/* Left Slider */}
@@ -66,13 +66,13 @@ const Banner = () => {
 
           {/* Right Static Banners */}
           <div className="w-[400px] md:w-full lg:w-[35%] h-auto lg:h-[500px] flex justify-between lg:flex-col items-center md:mt-3 lg:mt-0 px-2 gap-y-5">
-            <div className="w-[48%] lg:w-full h-[110px] md:h-[200px] lg:h-[48%]">
+            <div className="w-[49%] lg:w-full h-[110px] md:h-[200px] lg:h-[48%]">
               <Image
                 imgClassName="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
                 imgSrc={BannerWatch}
               />
             </div>
-            <div className="w-[48%] lg:w-full h-[110px] md:h-[200px] lg:h-[48%]">
+            <div className="w-[49%] lg:w-full h-[110px] md:h-[200px] lg:h-[48%]">
               <Image
                 imgClassName="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
                 imgSrc={BannerAirpods}

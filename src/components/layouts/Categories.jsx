@@ -13,10 +13,10 @@ import PowerBank from "/src/assets/powerBank.png";
 
 const Categories = () => {
   return (
-    <section className="w-full flex justify-center items-center m-auto py-16 md:py-20 lg:py-15 overflow-hidden ">
-      <Container className={"px-5"}>
+    <section className="w-full flex justify-center lg:justify-between items-center py-16 md:py-20 lg:py-15 overflow-hidden ">
+      <Container className={""}>
         {/* Top small Heading */}
-        <div className="w-[400px] flex space-x-2 p-3 ">
+        <div className="w-[400px] flex space-x-2 px-2 lg:px-0 pb-3 ">
           <div className="w-3 h-6 sm:w-4 sm:h-7 bg-mainColor rounded-sm"></div>
           <h6 className="text-sm sm:text-base text-mainColor font-semibold">
             Categories
@@ -24,15 +24,15 @@ const Categories = () => {
         </div>
 
         {/* Section Title */}
-        <div className="w-[400px] md:w-full lg:w-full flex justify-between items-center p-3">
+        <div className="w-[400px] md:w-full lg:w-full flex justify-between items-center pl-2 lg:pl-0">
           <h3 className="text-xl md:text-2xl lg:text-4xl text font-semibold">
-            Browse By Category
+            Browse By <span className="text-mainColor">Category</span>
           </h3>
-          <p className="px-5 py-2 bg-mainColor text-white rounded mr-2">View All</p>
+          <p className="px-5 py-2 bg-mainColor text-white rounded mr-3 lg:mr-0">View All</p>
         </div>
 
         {/* Responsive Grid */}
-        <div className="w-[400px] md:w-full md:h-full lg:w-full mt-8 flex justify-center items-center flex-wrap gap-5">
+        <div className="w-[400px] md:w-full md:h-full lg:w-full mt-8 flex justify-center lg:justify-between items-center flex-wrap gap-x-10 lg:gap-x-5 gap-y-5">
           <CategoryItem imgSrc={Phones} imgAlt="items" categoryName="Phones" />
           <CategoryItem imgSrc={Laptops} imgAlt="items" categoryName="Laptops" />
           <CategoryItem imgSrc={Tablets} imgAlt="items" categoryName="Tablets" />

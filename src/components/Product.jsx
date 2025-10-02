@@ -1,58 +1,75 @@
-import Flex from "./Flex";
+import { Link } from "react-router-dom";
 import { HiOutlineEye, HiOutlineHeart } from "react-icons/hi2";
-const Product = ({
-  imgSrc,
-  imgAlt,
-  badgeText,
-  title,
-  price,
-  productColor,
-  badgeClassName,
-  priceClassName,
-}) => {
-  return (
-    <>
-      <div className="relative group bg-white w-full  mx-auto">
-        <div className="relative w-full h-[250px]  md:h-[300px] lg:h-[330px] bg-white overflow-hidden">
-          {/* Default Image */}
-          <img
-            src={imgSrc}
-            alt={imgAlt}
-            className="w-full h-[250px]  md:h-[300px] lg:h-[330px] object-cover transition-opacity duration-300 border-2 border-gray-200"
-          />
-          <div className="absolute py-2 sm:py-3 space-y-2 sm:space-y-3 bottom-0 left-0 w-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out hover:cursor-pointer bg-black/80">
-            <p className="text-white text-center text-xs sm:text-sm">Add to Cart</p>
-          </div>
-        </div>
-        {/* Badge part Start  */}
-        <div
-          className={`absolute top-2 right-2 py-1 sm:py-2 px-3 sm:px-5 text-black font-bold text-center text-xs sm:text-sm ${badgeClassName}`}
-        >
-          {badgeText}
-        </div>
-        {/* Badge part End  */}
 
-        {/* Icons part */}
-        <div className="absolute space-y-2 sm:space-y-3 top-3 left-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
-          <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full hover:cursor-pointer bg-gray-200 flex items-center justify-center">
-            <HiOutlineEye className="text-lg sm:text-xl text-black" />
-          </div>
-          <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full hover:cursor-pointer bg-gray-200 flex items-center justify-center">
-            <HiOutlineHeart className="text-lg sm:text-xl text-black" />
-          </div>
+const Product = ({
+    imgSrc,
+    imgAlt,
+    badgeText,
+    title,
+    price,
+    productColor,
+    badgeClassName = "",
+    priceClassName = "",
+    productClassName = ""
+}) => {
+    return (
+        <div
+            className={`w-[190px]  md:w-[32%] lg:w-[23%] xl:w-[23%] relative group border-2 border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300 ${productClassName}`}
+        >
+            {/* Product Image with Quickview */}
+            <Link to="/quickview">
+                <div className="relative w-full aspect-[4/5] overflow-hidden rounded-t-lg">
+                    {/* Default Image */}
+                    <img
+                        src={imgSrc}
+                        alt={imgAlt}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+
+                    {/* Add to Cart Overlay */}
+                    <div className="absolute bottom-0 left-0 w-full py-3 bg-black/80 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out cursor-pointer">
+                        <p className="text-white text-center text-sm font-medium">Add to Cart</p>
+                    </div>
+                </div>
+            </Link>
+
+            {/* Badge */}
+            {badgeText && (
+                <div
+                    className={`absolute top-3 right-3 py-1.5 px-4 text-black font-bold text-sm bg-white rounded-full shadow-md ${badgeClassName}`}
+                >
+                    {badgeText}
+                </div>
+            )}
+
+            {/* Action Icons */}
+            <div
+                className="absolute flex flex-col gap-2 top-3 left-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out"
+            >
+                <div className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors duration-200">
+                    <HiOutlineEye className="text-lg text-gray-700" />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors duration-200">
+                    <HiOutlineHeart className="text-lg text-gray-700" />
+                </div>
+            </div>
+
+            {/* Product Info */}
+            <div className="p-4">
+                <p className="text-gray-500 text-sm font-medium line-clamp-1">
+                    {productColor}
+                </p>
+                <h3 className="text-gray-900 text-base font-semibold line-clamp-2 mt-1 hover:text-mainColor transition-colors duration-200">
+                    {title}
+                </h3>
+                <h4
+                    className={`text-mainColor text-lg font-bold mt-2 ${priceClassName}`}
+                >
+                    {price}
+                </h4>
+            </div>
         </div>
-        <div className="p-2 sm:p-4 sm:pb-5 mt-2 sm:mt-5">
-          <p className="text-[#767676] text-sm sm:text-base font-bold line-clamp-1">{productColor}</p>
-          <h3 className="text-[#262626] text-base sm:text-lg font-bold line-clamp-2 mt-1">{title}</h3>
-          <h4
-            className={`text-mainColor text-sm sm:text-base font-bold mt-1 ${priceClassName}`}
-          >
-            {price}
-          </h4>
-        </div>
-      </div>
-    </>
-  );
+    );
 };
 
 export default Product;
