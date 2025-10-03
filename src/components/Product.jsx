@@ -14,11 +14,11 @@ const Product = ({
 }) => {
     return (
         <div
-            className={`w-[190px]  md:w-[32%] lg:w-[23%] xl:w-[23%] relative group border-2 border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300 ${productClassName}`}
+            className={`w-[190px]  md:w-[32%] lg:w-[23%] xl:w-[23%] relative group border-2 border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300  ${productClassName}`}
         >
             {/* Product Image with Quickview */}
             <Link to="/quickview">
-                <div className="relative w-full aspect-[4/5] overflow-hidden rounded-t-lg">
+                <div className="relative w-full  overflow-hidden">
                     {/* Default Image */}
                     <img
                         src={imgSrc}
