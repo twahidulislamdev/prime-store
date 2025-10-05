@@ -2,17 +2,17 @@ import React, { useEffect, useState } from "react";
 import Flex from "../Flex";
 import Container from "../Container";
 import axios from "axios";
-import HomeProduct from "../HomeProduct";
+import ShopProduct from "../ShopProduct";
 
 const Shop = () => {
-    let [myProduct, setMyProduct] = useState([]);
+    const [myProduct, setMyProdyct] = useState([]);
     useEffect(() => {
         async function allDatas() {
             let data = await axios.get(
                 "https://twahidulislamdev.github.io/product-aip/data/products/index.json"
             );
-            setMyProduct(data.data.products);
-            console.log(data.data.data);
+            setMyProdyct(data.data.products);
+            // console.log(data.data.products);
         }
         allDatas();
     }, []);
@@ -20,16 +20,20 @@ const Shop = () => {
         <>
             <div className="py-10">
                 <Container>
-                    <Flex>
+                    <Flex className={"justify-between"}>
                         <div className="w-[20%]"></div>
-                        <div className="w-[80%]">
+                        <div className="w-[75%]">
                             <Flex className={"justify-between flex-wrap gap-y-5"}>
                                 {myProduct.map((item) => (
-                                    <HomeProduct
+                                    <ShopProduct
                                         className={""}
                                         title={item.title}
                                         price={item.price}
-                                        imgSrc={item.image}
+                                        imgSrcFirst={item.image}
+                                        imgAlt={"Arive One"}
+                                        text={"New"}
+                                        brand={item.brand}
+                                        category={item.category}
                                     />
                                 ))}
                             </Flex>
