@@ -17,7 +17,7 @@ const ShopProduct = ({
     return (
         <>
             <div
-                className={`relative w-[235px] lg:w-[310px] h-100 lg:h-110 group border-2 border-gray-200 m-auto lg:m-0 flex-wrap ${productClassName}`}
+                className={`relative w-[32%] lg:w-[310px] h-100 lg:h-110 group border-2 border-gray-200 m-auto lg:m-0 flex-wrap ${productClassName}`}
             >
                 {/* <Link to={"/quickview"} > */}
                 <div className="relative w-[230px] m-auto lg:w-[305px] h-70 lg:h-80 border-b-2 border-neutral-300">

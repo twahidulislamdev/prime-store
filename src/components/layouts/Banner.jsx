@@ -37,9 +37,9 @@ const Banner = () => {
   };
 
   return (
-    <section className="py-5 md:py-5 lg:py-5 overflow-hidden flex justify-center m-auto ">
+    <section className="w-full  py-5 md:py-5 lg:py-5 overflow-hidden m-auto ">
       <Container>
-        <Flex className="flex-col md:flex-col lg:flex-row lg:gap-6 ">
+        <Flex className="flex-col md:flex-col lg:flex-row lg:gap-5 ">
           {/* Left Slider */}
           <div className="w-[400px] md:w-full lg:w-[65%] slider-container rounded-lg overflow-hidden">
             <Slider {...settings}>

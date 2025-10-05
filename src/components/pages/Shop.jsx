@@ -18,11 +18,11 @@ const Shop = () => {
     }, []);
     return (
         <>
-            <div className="py-10">
+            <div className="w-full py-10">
                 <Container>
                     <Flex className={"justify-between"}>
-                        <div className="w-[20%]"></div>
-                        <div className="w-[75%]">
+                        <div className="w-0 lg:w-[20%]"></div>
+                        <div className="w-full lg:w-[75%]">
                             <Flex className={"justify-between flex-wrap gap-y-5"}>
                                 {myProduct.map((item) => (
                                     <ShopProduct

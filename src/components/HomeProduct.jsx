@@ -50,15 +50,15 @@ const HomeProduct = ({
   
   return (
     <div
-      className={`relative w-[235px] lg:w-[310px] h-100 lg:h-110 group border-2 border-gray-200 m-auto lg:m-0 flex-wrap ${productClassName}`}
+      className={`relative w-[48%] lg:w-[310px] h-100 lg:h-110 group border-2 border-gray-200 m-auto lg:m-0 flex-wrap ${productClassName}`}
     >
       {/* <Link to={"/quickview"} > */}
-        <div className="relative  w-[230px] m-auto lg:w-[305px] h-70 lg:h-80 border-b-2 border-neutral-300">
+        <div className="relative w-full lg:w-[305px] h-70 lg:h-80 border-b-2 border-neutral-300">
           {/* Default Image */}
           <img
             src={imgSrcFirst}
             alt={imgAlt}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+            className=" w-full h-full object-cover transition-opacity duration-300"
           />
           {/* Group Hover Part */}
           <div className="lg:p-0 space-y-3 absolute bottom-0 left-0 w-full lg:opacity-0 lg:translate-y-4 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 sm:opacity-100 sm:translate-y-0 transition-all duration-300 ease-in-out delay-100">

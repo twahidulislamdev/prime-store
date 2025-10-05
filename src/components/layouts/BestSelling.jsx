@@ -20,48 +20,48 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 const BestSelling = () => {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 1500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    autoplay: true,
-    autoplaySpeed: 3500,
-    responsive: [
-      {
-        breakpoint: 1024, // large devices (lg)
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768, // medium devices (md)
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 640, // small devices (sm)
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          dots: true,
-          centerMode: true,
-          centerPadding: "0px",
-        },
-      },
-    ],
-  };
+  // var settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 1500,
+  //   slidesToShow: 4,
+  //   slidesToScroll: 4,
+  //   initialSlide: 0,
+  //   autoplay: true,
+  //   autoplaySpeed: 3500,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024, // large devices (lg)
+  //       settings: {
+  //         slidesToShow: 4,
+  //         slidesToScroll: 4,
+  //         dots: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 768, // medium devices (md)
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 2,
+  //         dots: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 640, // small devices (sm)
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 1,
+  //         dots: true,
+  //         centerMode: true,
+  //         centerPadding: "0px",
+  //       },
+  //     },
+  //   ],
+  // };
 
   return (
     <>
-      <div className="w-full m-auto lg:px-0 mt-5 lg:mt-0   overflow-hidden">
+      <div className="w-full m-auto lg:px-0 mt-5 lg:mt-0">
         <Container>
           {/* Heading */}
           <div className="w-full flex space-x-2 px-2 lg:px-0 pb-3 ">
@@ -77,9 +77,9 @@ const BestSelling = () => {
           </div>
 
           {/* Products Slider */}
-          <div className="mt-10 grid grid-cols-1">
-            <div className="gap-[3px]">
-              <Slider className="pb-5" {...settings}>
+          <div className="w-full mt-10">
+            <div className="flex justify-between flex-wrap">
+              {/* <Slider className="pb-5" {...settings}> */}
                 <div>
                   <HomeProduct
                     title={"iPhone 16 Pro"}
@@ -186,7 +186,7 @@ const BestSelling = () => {
                     badgeClassName={"bg-green-300"}
                   />
                 </div>
-              </Slider>
+              {/* </Slider> */}
             </div>
           </div>
 
