@@ -108,7 +108,7 @@ const Header = () => {
       {/* Mobile Header End */}
 
       {/* Header Lower Part Start */}
-      <div className="w-full flex justify-center m-auto px-3 py-4 bg-[#F5F5F3] shadow-sm overflow-hidden">
+      <div className="w-full flex justify-center m-auto px-4 py-4 bg-[#F5F5F3] shadow-sm overflow-hidden">
         <Container>
           <div className="flex justify-between items-center">
             {/* Category Icon */}
@@ -126,7 +126,7 @@ const Header = () => {
             </div>
 
             {/* Icons */}
-            <div className="flex items-center gap-x-3 lg:gap-x-8">
+            <div className="flex items-center gap-x-4 lg:gap-x-8">
               <FaRegHeart className="text-xl cursor-pointer" />
               <FaRegUser
                 onClick={() => setIsUserOpen(true)}

@@ -50,10 +50,10 @@ const HomeProduct = ({
   
   return (
     <div
-      className={`relative w-[48%] lg:w-[310px] h-100 lg:h-110 group border-2 border-gray-200 m-auto lg:m-0 flex-wrap ${productClassName}`}
+      className={`relative w-[330px] lg:w-[310px] h-130 group border-2 border-gray-200 m-auto lg:m-0 ${productClassName}`}
     >
-      {/* <Link to={"/quickview"} > */}
-        <div className="relative w-full lg:w-[305px] h-70 lg:h-80 border-b-2 border-neutral-300">
+      <Link to={"/quickview"} >
+        <div className="relative w-[330px] lg:w-[310px] h-100 overflow-hidden">
           {/* Default Image */}
           <img
             src={imgSrcFirst}
@@ -79,7 +79,7 @@ const HomeProduct = ({
           {/* Wishlist Icon end */}
           {/* Group Hover Part End */}
         </div>
-      {/* </Link> */}
+      </Link>
 
       {/* Badge */}
       <div

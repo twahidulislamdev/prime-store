@@ -37,13 +37,13 @@ const Banner = () => {
   };
 
   return (
-    <section className="w-full  py-5 md:py-5 lg:py-5 overflow-hidden m-auto ">
+    <section className="w-full  py-5 md:py-5 lg:py-5 px-3 overflow-hidden  ">
       <Container>
         <Flex className="flex-col md:flex-col lg:flex-row lg:gap-5 ">
           {/* Left Slider */}
-          <div className="w-[400px] md:w-full lg:w-[65%] slider-container rounded-lg overflow-hidden">
+          <div className="w-full md:w-full lg:w-[65%] slider-container rounded-lg overflow-hidden">
             <Slider {...settings}>
-              <div className="w-full md:w-full flex justify-center items-center m-auto rounded-lg px-2 lg:px-0">
+              <div className="w-full md:w-full flex justify-center items-center m-auto rounded-lg p lg:px-0">
                 <Image
                   imgClassName="w-full h-[280px] md:h-[350px] lg:h-[500px] object-cover rounded-lg"
                   imgSrc={BannerOne}
@@ -65,7 +65,7 @@ const Banner = () => {
           </div>
 
           {/* Right Static Banners */}
-          <div className="w-[400px] md:w-full lg:w-[35%] h-auto lg:h-[500px] flex justify-between lg:flex-col items-center md:mt-3 lg:mt-0 px-2 gap-y-5">
+          <div className="w-full md:w-full lg:w-[35%] h-auto lg:h-[500px] flex justify-between lg:flex-col items-center md:mt-3 lg:mt-0  gap-y-5">
             <div className="w-[49%] lg:w-full h-[110px] md:h-[200px] lg:h-[48%]">
               <Image
                 imgClassName="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
