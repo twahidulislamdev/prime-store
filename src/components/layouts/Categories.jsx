@@ -13,7 +13,7 @@ import PowerBank from "/src/assets/powerBank.png";
 
 const Categories = () => {
   return (
-    <div className="w-full flex justify-center lg:justify-between items-center py-16 md:py-20 lg:py-15 overflow-hidden ">
+    <div className="w-full flex justify-center lg:justify-between items-center py-15 md:py-20 lg:py-15 overflow-hidden ">
       <Container className={""}>
         {/* Top small Heading */}
         <div className="w-full flex space-x-2 pl-2 lg:px-0 pb-3 ">
