@@ -43,13 +43,13 @@ const Header = () => {
   return (
     <>
       {/* Desktop Header start */}
-      <div className="hidden lg:block w-full m-auto py-5 overflow-hidden">
-        <Container>
+      <div className="hidden lg:block w-full overflow-x-hidden py-5">
+        <Container className="px-4">
           <Flex className="justify-between items-center">
             <Link to={"/"}>
               <h3 className="text-2xl font-bold">Prime <span className="text-mainColor">Store</span></h3>
             </Link>
-            <ul className="flex items-center gap-x-15 xl:gap-x-10">
+            <ul className="flex flex-wrap items-center gap-x-6 md:gap-x-8 lg:gap-x-10 xl:gap-x-12">
               {menuItems.map((item, idx) => (
                 <Link to={item.path} key={idx}>
                   <li className="relative list-none py-2 text-sm text-black font-medium group cursor-pointer transition-all ease-in-out">
@@ -65,8 +65,8 @@ const Header = () => {
       {/* Desktop Header End */}
 
       {/* Mobile Header start */}
-      <div className="w-full flex justify-center items-center m-auto py-4 px-3 lg:hidden bg-white shadow-sm overflow-hidden">
-        <Container>
+      <div className="w-full bg-white shadow-sm overflow-x-hidden lg:hidden">
+        <Container className="px-4 py-4">
           <Flex className="justify-between items-center">
             <Link to={"/"}>
               <h3 className="text-xl font-semibold">Prime <span className="text-red-500">Store</span></h3>
@@ -86,7 +86,7 @@ const Header = () => {
           </Flex>
 
           {isMenuOpen && (
-            <div className="w-full mt-4 bg-gray-100 rounded-md shadow-sm">
+            <div className="w-full mt-4 bg-gray-100 rounded-md shadow-sm overflow-x-hidden">
               <ul className="text-center py-3 space-y-2">
                 {menuItems.map((item, idx) => (
                   <Link
@@ -108,9 +108,9 @@ const Header = () => {
       {/* Mobile Header End */}
 
       {/* Header Lower Part Start */}
-      <div className="w-full flex justify-center m-auto px-4 py-4 bg-[#F5F5F3] shadow-sm overflow-hidden">
+      <div className="w-full flex justify-center m-auto px-4 py-4 bg-[#F5F5F3] shadow-sm overflow-x-hidden">
         <Container>
-          <div className="flex justify-between items-center">
+          <div className="flex flex-wrap justify-between items-center">
             {/* Category Icon */}
             <HiMiniBars3CenterLeft
               onClick={() => setIsCategoryOpen(true)}
@@ -119,7 +119,7 @@ const Header = () => {
             {/* Search */}
             <div className="flex-1 mx-3 lg:mx-8 flex justify-center items-center">
               <input
-                className="w-[200px] lg:w-[500px] py-2 px-3 rounded-md border border-gray-300 outline-1 outline-gray-300 bg-[#F5F5F5] text-sm"
+                className="w-full max-w-[500px] py-2 px-3 rounded-md border border-gray-300 outline-1 outline-gray-300 bg-[#F5F5F5] text-sm"
                 type="text"
                 placeholder="What are you looking?"
               />
