@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import {
-  HiOutlineShoppingBag,
-  HiOutlineEye,
   HiOutlineHeart,
 } from "react-icons/hi2";
 const ShopProduct = ({
@@ -17,10 +15,10 @@ const ShopProduct = ({
   return (
     <>
       <div
-        className={`relative w-full lg:w-[290px] h-80 lg:h-100 group border-2 border-gray-200 m-auto lg:m-0 flex-wrap ${productClassName}`}
+        className={`relative w-full lg:w-[290px] h-90 lg:h-95  group border-2 border-gray-200 m-auto lg:m-0 flex-wrap ${productClassName}`}
       >
         {/* <Link to={"/quickview"} > */}
-        <div className="relative w-full max-w-[290px] m-auto h-50 lg:h-70 border-b-2 border-neutral-300">
+        <div className="relative w-full max-w-[290px] m-auto h-65 lg:h-70 border-b-2 border-neutral-300">
           {/* Default Image */}
           <img
             src={imgSrcFirst}
@@ -31,7 +29,7 @@ const ShopProduct = ({
           <div className="lg:p-0 space-y-3 absolute bottom-0 left-0 w-full lg:opacity-0 lg:translate-y-4 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 sm:opacity-100 sm:translate-y-0 transition-all duration-300 ease-in-out delay-100">
             {/* Add To Cart part Start */}
             <div className="w-[100%] h-[40px] lg:h-[50px] flex justify-center m-auto hover:cursor-pointer bg-black hover:bg-mainColor transition-colors duration-300">
-              <p className="py-2 lg:py-3 text-lg font-medium text-white">
+              <p className="py-2 lg:py-3 text-md lg:text-lg font-medium text-white">
                 ADD TO CART
               </p>
             </div>
@@ -53,11 +51,11 @@ const ShopProduct = ({
           {badgeText}
         </div>
 
-        <div className="pb-10 px-3 mt-3">
-          <h3 className="text-[#262626] text-lg font-bold py-1">{title}</h3>
+        <div className="pb-10 px-2 mt-2">
+          <h3 className="text-[#262626] text-md lg:text-lg font-bold py-1">{title}</h3>
           <div className="flex justify-between items-center">
             <h4
-              className={`text-mainColor text-lg font-bold ${priceClassName}`}
+              className={`text-mainColor text-md lg:text-lg font-bold ${priceClassName}`}
             >
               ${price.toFixed(2)}
             </h4>

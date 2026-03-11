@@ -6,11 +6,10 @@ import ShopProduct from "../ShopProduct";
 
 const Shop = () => {
   const [myProduct, setMyProduct] = useState([]); // ← fixed typo
-
   useEffect(() => {
     async function allDatas() {
       try {
-        let { data } = await axios.get(
+        const { data } = await axios.get(
           "https://twahidulislamdev.github.io/product-aip/data/products/index.json",
         );
         setMyProduct(data.products); // ← most APIs return { products: [...] }

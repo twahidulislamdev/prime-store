@@ -28,7 +28,6 @@ const Header = () => {
   const menuItems = [
     { name: "HOME", path: "/" },
     { name: "SHOP", path: "/shop" },
-    { name: "BLOG", path: "/blog" },
     { name: "ABOUT", path: "/about" },
     { name: "CONTACT", path: "/contact" },
     { name: "PAGES", path: "/pages" },
@@ -47,7 +46,9 @@ const Header = () => {
         <Container className="px-4">
           <Flex className="justify-between items-center">
             <Link to={"/"}>
-              <h3 className="text-2xl font-bold">Prime <span className="text-mainColor">Store</span></h3>
+              <h3 className="text-2xl font-bold">
+                Prime <span className="text-mainColor">Store</span>
+              </h3>
             </Link>
             <ul className="flex flex-wrap items-center gap-x-6 md:gap-x-8 lg:gap-x-10 xl:gap-x-12">
               {menuItems.map((item, idx) => (
@@ -69,7 +70,9 @@ const Header = () => {
         <Container className="px-4 py-4">
           <Flex className="justify-between items-center">
             <Link to={"/"}>
-              <h3 className="text-xl font-semibold">Prime <span className="text-red-500">Store</span></h3>
+              <h3 className="text-xl font-semibold">
+                Prime <span className="text-red-500">Store</span>
+              </h3>
             </Link>
 
             {isMenuOpen ? (
@@ -257,10 +260,10 @@ const Header = () => {
               />
             </div>
             {/* AddToCart Single Product start */}
-            
+
             {/* AddToCart Single Product End */}
             {/* Sub Total/ view cart section Start */}
-            
+
             {/* Sub Total/ view cart section End */}
           </div>
         )}
@@ -270,11 +273,7 @@ const Header = () => {
           <div className="fixed top-0 left-0 w-full h-screen bg-white shadow-lg z-50">
             <div className="flex">
               <div className="w-[50%] h-screen hidden lg:block">
-                <Image
-                  className={"w-full h-full"}
-                  imgSrc={""}
-                  imgAlt={""}
-                />
+                <Image className={"w-full h-full"} imgSrc={""} imgAlt={""} />
               </div>
               <div className="w-full lg:w-[50%] p-5 lg:p-10">
                 <div className="flex justify-between items-center">
@@ -299,17 +298,31 @@ const Header = () => {
                 <div className="px-5 mt-10">
                   <ul className="space-y-5">
                     <li className="text-xl font-medium uppercase">New</li>
-                    <li className="text-xl font-medium uppercase">Best Sellers</li>
-                    <li className="text-xl font-medium uppercase">Collaborations®</li>
+                    <li className="text-xl font-medium uppercase">
+                      Best Sellers
+                    </li>
+                    <li className="text-xl font-medium uppercase">
+                      Collaborations®
+                    </li>
                     <li className="text-xl font-medium uppercase">Denim</li>
-                    <li className="text-xl font-medium uppercase">Jackets & Coats</li>
-                    <li className="text-xl font-medium uppercase">Overshirts</li>
+                    <li className="text-xl font-medium uppercase">
+                      Jackets & Coats
+                    </li>
+                    <li className="text-xl font-medium uppercase">
+                      Overshirts
+                    </li>
                     <li className="text-xl font-medium uppercase">Trousers</li>
                     <li className="text-xl font-medium uppercase">Jeans</li>
-                    <li className="text-xl font-medium uppercase">T-shirts & Tops</li>
-                    <li className="text-xl font-medium uppercase">Shirts & Blouses</li>
+                    <li className="text-xl font-medium uppercase">
+                      T-shirts & Tops
+                    </li>
+                    <li className="text-xl font-medium uppercase">
+                      Shirts & Blouses
+                    </li>
                     <li className="text-xl font-medium uppercase">Shoes</li>
-                    <li className="text-xl font-medium uppercase">Accessories</li>
+                    <li className="text-xl font-medium uppercase">
+                      Accessories
+                    </li>
                   </ul>
                 </div>
               </div>

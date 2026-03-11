@@ -48,7 +48,7 @@ const HomeProduct = ({
 
   return (
     <div
-      className={`relative w-[330px] lg:w-[310px] h-130 group border-2 border-gray-200 m-auto lg:m-0 ${productClassName}`}
+      className={`relative w-[330px] lg:w-[310px] h-130  group border-2 border-gray-200 m-auto lg:m-0 ${productClassName}`}
     >
       <Link to={"/quickview"}>
         <div className="relative w-[325px] lg:w-[305px] h-100 m-auto ">
@@ -84,10 +84,10 @@ const HomeProduct = ({
         {badgeText}
       </div>
 
-      <div className="pb-10 px-3 mt-3">
-        <h3 className="text-[#262626] text-lg font-bold py-1">{title}</h3>
+      <div className="pb-10 pt-3 px-3 border-t-2 border-neutral-300">
+        <h3 className="text-[#262626] text-xl font-extrabold py-1">{title}</h3>
         <div className="flex justify-between items-center">
-          <h4 className={`text-mainColor text-lg font-bold ${priceClassName}`}>
+          <h4 className={`text-mainColor text-xl font-bold ${priceClassName}`}>
             ${price.toFixed(2)}
           </h4>
         </div>
