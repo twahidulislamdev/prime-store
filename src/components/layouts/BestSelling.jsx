@@ -37,8 +37,8 @@ const BestSelling = () => {
         {/* Heading + Navigation */}
         <div className="w-full flex items-center justify-between ">
           <h3 className="text-xl md:text-2xl lg:text-4xl text font-semibold px-3 lg:px-0">
-          Best Selling <span className="text-mainColor">Products</span>
-        </h3>
+            Best Selling <span className="text-mainColor">Products</span>
+          </h3>
 
           {/* Arrows only for lg+ */}
           <div className="hidden lg:flex items-center gap-3">
@@ -180,10 +180,7 @@ const BestSelling = () => {
         <div className="flex justify-center mt-6">
           <Link to="/shop">
             <button className="relative  text-sm md:text-base font-medium group cursor-pointer px-5 py-2 bg-mainColor text-white rounded">
-              <span className="transition-colors duration-300">
-                View All
-              </span>
-              <span className="absolute left-0 bottom-0 h-0.5 bg-white w-1/3 group-hover:w-full transition-all duration-300 ease-in-out"></span>
+              <span className="transition-colors duration-300">View All</span>
             </button>
           </Link>
         </div>
