@@ -4,6 +4,7 @@ import Categories from "../layouts/Categories";
 import BestSelling from "../layouts/BestSelling";
 import LatestOffer from "../layouts/LatestOffer";
 import OurProducts from "../layouts/OurProducts";
+import Featured from "../layouts/Featured";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <BestSelling />
       <LatestOffer />
       <OurProducts />
+      <Featured />
     </>
   );
 };
