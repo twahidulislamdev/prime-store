@@ -5,6 +5,7 @@ import BestSelling from "../layouts/BestSelling";
 import LatestOffer from "../layouts/LatestOffer";
 import OurProducts from "../layouts/OurProducts";
 import Featured from "../layouts/Featured";
+import Policy from "../layouts/Policy";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <LatestOffer />
       <OurProducts />
       <Featured />
+      <Policy />
     </>
   );
 };

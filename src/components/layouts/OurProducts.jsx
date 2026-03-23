@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const OurProducts = () => {
-  const [myProduct, setMyProduct] = useState([]); // ← fixed typo
+  const [myProduct, setMyProduct] = useState([]);
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     async function allDatas() {
       try {
-        // replace this URL with your own backend endpoint
         const apiEndpoint =
           import.meta.env.VITE_PRODUCTS_API ||
           "https://twahidulislamdev.github.io/product-aip/data/products/index.json";
@@ -25,34 +24,36 @@ const OurProducts = () => {
   }, []);
 
   return (
-    <div className="w-full m-auto lg:px-0 mt-5  overflow-hidden">
+    <div className="w-full m-auto lg:px-0 mt-5 overflow-hidden">
       <Container>
         {/* Top Label */}
-        <div className="w-full flex space-x-2 pb-3 px-3 lg:px-0">
+        <div className="w-full flex space-x-2 pb-3 px-2 lg:px-0">
           <div className="w-3 h-6 sm:w-4 sm:h-7 bg-mainColor rounded-sm"></div>
-          <h6 className="text-sm sm:text-base text-mainColor font-semibold ">
-            Categories
+          <h6 className="text-sm sm:text-base text-mainColor font-semibold">
+            Our Products
           </h6>
         </div>
 
         {/* Section Title */}
-        <h3 className="text-xl md:text-2xl lg:text-4xl text font-semibold px-3 lg:px-0">
+        <h3 className="text-xl md:text-2xl lg:text-4xl font-semibold px-2 lg:px-0">
           Explore Our <span className="text-mainColor">Products</span>
         </h3>
 
         {/* Products grid retrieved from API */}
-        <div className="w-full mt-5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
+        <div className="w-full mt-5 px-2">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 justify-items-center">
             {(showAll ? myProduct : myProduct.slice(0, 8)).map((prod) => (
-              <HomeProduct
-                key={prod.id}
-                title={prod.title}
-                price={prod.price}
-                imgSrcFirst={prod.image}
-                imgAlt={prod.title}
-                badgeText={prod.badge}
-                badgeClassName={prod.badge ? "bg-green-300" : ""}
-              />
+              <div key={prod.id} className="w-full md:w-auto">
+                <HomeProduct
+                  title={prod.title}
+                  price={prod.price}
+                  imgSrcFirst={prod.image}
+                  imgAlt={prod.title}
+                  badgeText={prod.badge}
+                  badgeClassName={prod.badge ? "bg-green-300" : ""}
+                  className="w-full md:w-auto h-48 md:h-auto"
+                />
+              </div>
             ))}
           </div>
         </div>

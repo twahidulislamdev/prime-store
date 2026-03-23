@@ -24,10 +24,10 @@ const BestSelling = () => {
   const nextRef = useRef(null);
 
   return (
-    <div className="w-full m-auto  mt-5  overflow-hidden">
+    <div className="w-full m-auto mt-5 overflow-hidden">
       <Container>
         {/* Top Label */}
-        <div className="w-full flex space-x-2 px-3 lg:px-0 pb-3">
+        <div className="w-full flex space-x-2 px-2 lg:px-0 pb-3">
           <div className="w-3 h-6 sm:w-4 sm:h-7 bg-mainColor rounded-sm"></div>
           <h6 className="text-sm sm:text-base text-mainColor font-semibold">
             This Month
@@ -35,8 +35,8 @@ const BestSelling = () => {
         </div>
 
         {/* Heading + Navigation */}
-        <div className="w-full flex items-center justify-between ">
-          <h3 className="text-xl md:text-2xl lg:text-4xl text font-semibold px-3 lg:px-0">
+        <div className="w-full flex items-center justify-between">
+          <h3 className="text-xl md:text-2xl lg:text-4xl font-semibold px-2 lg:px-0">
             Best Selling <span className="text-mainColor">Products</span>
           </h3>
 
@@ -59,11 +59,10 @@ const BestSelling = () => {
         </div>
 
         {/* Slider */}
-        <div className="w-full mt-5">
+        <div className="w-full mt-5 px-2">
           <Swiper
             modules={[Autoplay, Navigation]}
             spaceBetween={16}
-            slidesPerView={4}
             pagination={{ clickable: true }}
             navigation={{
               prevEl: prevRef.current,
@@ -80,7 +79,7 @@ const BestSelling = () => {
             loop={true}
             speed={500}
             breakpoints={{
-              0: { slidesPerView: 1, spaceBetween: 16 },
+              0: { slidesPerView: 2, spaceBetween: 10 },
               640: { slidesPerView: 2, spaceBetween: 16 },
               768: { slidesPerView: 2, spaceBetween: 24 },
               1024: { slidesPerView: 4, spaceBetween: 24 },
@@ -177,9 +176,9 @@ const BestSelling = () => {
         </div>
 
         {/* See More */}
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-5 ">
           <Link to="/shop">
-            <button className="relative  text-sm md:text-base font-medium group cursor-pointer px-5 py-2 bg-mainColor text-white rounded">
+            <button className="relative text-sm md:text-base font-medium group cursor-pointer px-5 py-2 bg-mainColor text-white rounded">
               <span className="transition-colors duration-300">View All</span>
             </button>
           </Link>
