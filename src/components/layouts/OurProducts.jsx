@@ -14,7 +14,7 @@ const OurProducts = () => {
         const apiEndpoint =
           import.meta.env.VITE_PRODUCTS_API ||
           "https://twahidulislamdev.github.io/product-aip/data/products/index.json";
-        let { data } = await axios.get(apiEndpoint);
+        const { data } = await axios.get(apiEndpoint);
         setMyProduct(data.products);
       } catch (err) {
         console.error("Failed to load products:", err);

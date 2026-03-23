@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  HiOutlineHeart,
-} from "react-icons/hi2";
+import { HiOutlineHeart } from "react-icons/hi2";
 
 const HomeProduct = ({
   title,
@@ -56,7 +54,9 @@ const HomeProduct = ({
           {title}
         </h3>
         <div className="flex justify-between items-center">
-          <h4 className={`text-mainColor text-md lg:text-xl font-bold ${priceClassName}`}>
+          <h4
+            className={`text-mainColor text-md lg:text-xl font-bold ${priceClassName}`}
+          >
             ${price.toFixed(2)}
           </h4>
         </div>

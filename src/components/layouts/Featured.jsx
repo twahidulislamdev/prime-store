@@ -91,8 +91,8 @@ function BannerCard({ banner, className = "" }) {
               banner.size === "large"
                 ? "clamp(1.4rem, 2vw, 2rem)"
                 : banner.size === "wide"
-                ? "clamp(1.1rem, 1.6vw, 1.5rem)"
-                : "clamp(1rem, 1.3vw, 1.2rem)",
+                  ? "clamp(1.1rem, 1.6vw, 1.5rem)"
+                  : "clamp(1rem, 1.3vw, 1.2rem)",
             transform: hovered ? "translateY(-3px)" : "translateY(0)",
           }}
         >
