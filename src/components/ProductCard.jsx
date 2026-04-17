@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { HiOutlineHeart } from "react-icons/hi2";
 
-const HomeProduct = ({
+const ProductCard = ({
   title,
   price,
   badgeText,
@@ -65,4 +65,4 @@ const HomeProduct = ({
   );
 };
 
-export default HomeProduct;
+export default ProductCard;

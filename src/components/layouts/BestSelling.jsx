@@ -1,14 +1,5 @@
-import React, { useRef } from "react";
-import Container from "../Container";
-import HomeProduct from "../HomeProduct";
-import PhoneOne from "../../assets/phoneOne.jpg";
-import PhoneTwo from "../../assets/phoneTwo.jpg";
-import PhoneFive from "../../assets/phoneFive.jpg";
-import PhoneSix from "../../assets/phoneSix.jpg";
-import PhoneSeven from "../../assets/phoneSeven.jpg";
-import PhoneEight from "../../assets/phoneEight.jpg";
-import PhoneNine from "../../assets/phoneNine.jpg";
-import PhoneTen from "../../assets/phoneTen.jpg";
+import React, { useRef, useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,10 +9,35 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import ProductCard from "../ProductCard";
+import axios from "axios";
+import Container from "../Container";
 
 const BestSelling = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  const [products, setProducts] = useState([]);
+
+  // 🔥 Fetch Products
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const res = await axios.get(
+          "https://twahidulislamdev.github.io/product-aip/data/products/index.json",
+        );
+
+        // If your JSON has nested structure like { products: [] }
+        const data = res.data.products || res.data;
+
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    }
+
+    fetchProducts();
+  }, []);
 
   return (
     <div className="w-full m-auto mt-5 overflow-hidden">
@@ -63,7 +79,6 @@ const BestSelling = () => {
           <Swiper
             modules={[Autoplay, Navigation]}
             spaceBetween={16}
-            pagination={{ clickable: true }}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current,
@@ -85,98 +100,29 @@ const BestSelling = () => {
               1024: { slidesPerView: 4, spaceBetween: 24 },
             }}
           >
-            <SwiperSlide>
-              <HomeProduct
-                title="iPhone 16 Pro"
-                price={29.0}
-                imgSrcFirst={PhoneFive}
-                imgAlt="iPhone 16 Pro"
-                badgeText="New"
-                badgeClassName="bg-neutral-200"
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <HomeProduct
-                title="Galaxy S25 Ultra 5G"
-                price={1400}
-                imgSrcFirst={PhoneOne}
-                imgAlt="Galaxy S25 Ultra 5G"
-                badgeText="New"
-                badgeClassName="bg-neutral-200"
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <HomeProduct
-                title="iPhone 16 Pro"
-                price={29.0}
-                imgSrcFirst={PhoneSix}
-                imgAlt="iPhone 16 Pro"
-                badgeText="New"
-                badgeClassName="bg-green-300"
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <HomeProduct
-                title="Galaxy S25 Ultra 5G"
-                price={49.0}
-                imgSrcFirst={PhoneTwo}
-                imgAlt="Galaxy S25 Ultra 5G"
-                badgeText="10%"
-                badgeClassName="bg-green-300"
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <HomeProduct
-                title="Galaxy S25 5G"
-                price={17.0}
-                imgSrcFirst={PhoneSeven}
-                imgAlt="Galaxy S25 5G"
-                badgeText="New"
-                badgeClassName="bg-neutral-200"
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <HomeProduct
-                title="Galaxy A56 5G"
-                price={49.0}
-                imgSrcFirst={PhoneEight}
-                imgAlt="Galaxy A56 5G"
-                badgeText="10%"
-                badgeClassName="bg-green-300"
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <HomeProduct
-                title="Galaxy A36 5G"
-                price={49.0}
-                imgSrcFirst={PhoneNine}
-                imgAlt="Galaxy A36 5G"
-                badgeText="10%"
-                badgeClassName="bg-green-300"
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <HomeProduct
-                title="iPhone 16e"
-                price={49.0}
-                imgSrcFirst={PhoneTen}
-                imgAlt="iPhone 16e"
-                badgeText="10%"
-                badgeClassName="bg-green-300"
-              />
-            </SwiperSlide>
+            {products.map((item, index) => (
+              <SwiperSlide key={index}>
+                <ProductCard
+                  title={item.title || item.name}
+                  price={item.price}
+                  imgSrcFirst={item.thumbnail || item.image || item.images?.[0]}
+                  imgAlt={item.title || item.name}
+                  badgeText={
+                    item.discountPercentage
+                      ? `${Math.round(item.discountPercentage)}%`
+                      : "New"
+                  }
+                  badgeClassName={
+                    item.discountPercentage ? "bg-green-300" : "bg-neutral-200"
+                  }
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
 
         {/* See More */}
-        <div className="flex justify-center mt-5 ">
+        <div className="flex justify-center mt-5">
           <Link to="/shop">
             <button className="relative text-sm md:text-base font-medium group cursor-pointer px-5 py-2 bg-mainColor text-white rounded">
               <span className="transition-colors duration-300">View All</span>

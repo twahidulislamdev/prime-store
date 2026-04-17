@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Container from "../Container";
-import HomeProduct from "../HomeProduct";
+
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ProductCard from "../ProductCard";
 
 const OurProducts = () => {
   const [myProduct, setMyProduct] = useState([]);
@@ -44,7 +45,7 @@ const OurProducts = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 justify-items-center">
             {(showAll ? myProduct : myProduct.slice(0, 8)).map((prod) => (
               <div key={prod.id} className="w-full md:w-auto">
-                <HomeProduct
+                <ProductCard
                   title={prod.title}
                   price={prod.price}
                   imgSrcFirst={prod.image}
