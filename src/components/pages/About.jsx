@@ -1,173 +1,210 @@
 import React from "react";
 import Container from "../Container";
 
+/* ─────────── Components ─────────── */
+const Section = ({ children, className = "" }) => (
+  <section className={`py-28 ${className}`}>{children}</section>
+);
+
+const Button = ({ children, variant = "primary" }) => {
+  const base =
+    "px-8 py-3.5 text-sm font-medium rounded-2xl transition-all duration-300 active:scale-[0.985]";
+  const styles = {
+    primary: "bg-red-500 text-white hover:bg-black hover:text-white",
+    outline: "border border-black text-black hover:bg-black hover:text-white",
+  };
+  return <button className={`${base} ${styles[variant]}`}>{children}</button>;
+};
+
+const FeatureCard = ({ num, title, desc }) => (
+  <div className="group p-8 border border-black/10 rounded-3xl hover:border-red-500 transition-all duration-300">
+    <p className="text-6xl font-light text-black/10 group-hover:text-red-500/30 transition-colors mb-6">
+      {num}
+    </p>
+    <h4 className="text-xl font-semibold text-black mb-3 group-hover:text-red-500 transition-colors">
+      {title}
+    </h4>
+    <p className="text-black/70 text-[15px] leading-relaxed">{desc}</p>
+  </div>
+);
+
+const Stat = ({ value, label }) => (
+  <div className="text-center">
+    <p className="text-5xl font-light text-black tracking-tight">
+      <span className="text-red-500">{value}</span>
+    </p>
+    <p className="mt-2 text-xs uppercase tracking-widest text-black/50 font-medium">
+      {label}
+    </p>
+  </div>
+);
+
+const CheckItem = ({ text }) => (
+  <li className="flex gap-4 items-start text-black/80">
+    <span className="mt-1 w-5 h-5 flex items-center justify-center rounded-full border border-red-500 text-red-500 text-xs flex-shrink-0">
+      ✓
+    </span>
+    <span className="text-[15px]">{text}</span>
+  </li>
+);
+
+/* ─────────── Data ─────────── */
 const features = [
   {
     num: "01",
-    title: "100% Authentic",
-    desc: "All products are genuine and come with official manufacturer warranty.",
+    title: "Authentic",
+    desc: "All products are verified genuine with full warranty.",
   },
   {
     num: "02",
     title: "Fast Delivery",
-    desc: "Quick and reliable delivery right to your doorstep, every time.",
+    desc: "Reliable shipping with real-time tracking.",
   },
   {
     num: "03",
     title: "Best Prices",
-    desc: "Competitive pricing without ever compromising on quality.",
+    desc: "Premium quality without premium markup.",
   },
 ];
 
 const stats = [
-  { value: "5K+", label: "Happy Customers" },
+  { value: "5K+", label: "Customers" },
   { value: "1K+", label: "Products" },
-  { value: "3+",  label: "Years Experience" },
+  { value: "3+", label: "Years" },
   { value: "24/7", label: "Support" },
 ];
 
+const promises = [
+  "Authenticity guaranteed",
+  "Transparent pricing",
+  "24/7 customer support",
+  "Easy returns policy",
+  "Fast & secure delivery",
+];
+
+/* ─────────── Main Component ─────────── */
 const About = () => {
   return (
-    <div className="bg-white font-sans text-gray-900">
-
-      {/* Hero */}
-      <section className="py-20 border-b border-gray-100">
+    <div className="bg-white text-black">
+      {/* HERO - Clean & Minimal */}
+      <Section className="pt-16 pb-20">
         <Container>
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <p className="text-red-500 text-xs tracking-[3px] uppercase font-medium mb-4">
+              PRIME TECH STORE
+            </p>
+            <h1 className="text-6xl md:text-7xl font-light tracking-tighter leading-none mb-6">
+              Technology that{" "}
+              <span className="text-red-500 font-normal">empowers</span> you
+            </h1>
+            <p className="text-black/70 text-lg max-w-md mx-auto">
+              Curated smartphones, laptops, and smart gadgets for modern living.
+            </p>
+          </div>
 
-            <div>
-              <span className="inline-flex items-center gap-2 text-xs font-medium tracking-widest uppercase text-gray-400 border border-gray-200 rounded-full px-3 py-1 mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block" />
-                Now shipping nationwide
-              </span>
-              <p className="text-xs font-semibold tracking-widest uppercase text-red-500 mb-3">
-                Prime Tech Store
-              </p>
-              <h1 className="text-5xl font-serif font-bold leading-[1.1] mb-5">
-                Powering your{" "}
-                <em className="italic text-red-500">digital life</em>
-              </h1>
-              <p className="text-gray-500 text-base leading-relaxed mb-8 font-light max-w-md">
-                The latest smartphones, laptops, and smart gadgets — designed to
-                keep you connected, productive, and ahead of the curve.
-              </p>
-              <div className="flex gap-3 flex-wrap">
-                <button className="px-6 py-2.5 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-800 transition">
-                  Explore Products
-                </button>
-                <button className="px-6 py-2.5 border border-gray-300 text-sm font-medium rounded-md hover:bg-gray-50 transition">
-                  Learn more
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=900&auto=format&fit=crop&q=80"
-                alt="Premium Tech Gadgets"
-                className="w-full h-full object-cover rounded-2xl"
-              />
-            </div>
-
+          <div className="flex justify-center gap-4">
+            <Button>Explore Collection</Button>
+            <Button variant="outline">Learn More</Button>
           </div>
         </Container>
-      </section>
+      </Section>
 
-      {/* Features */}
-      <section className="py-20 border-b border-gray-100">
+      {/* IMAGE + HERO VISUAL */}
+      <Section className="pt-0 pb-28">
         <Container>
-          <p className="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-2">
-            Why choose us
-          </p>
-          <h2 className="text-3xl font-serif font-bold mb-10 max-w-xs leading-tight">
-            Built on trust, designed for you
-          </h2>
-
-          <div className="grid md:grid-cols-3 divide-x divide-y md:divide-y-0 divide-gray-100 border border-gray-100 rounded-xl overflow-hidden">
-            {features.map((f) => (
-              <div key={f.num} className="p-8 bg-white hover:bg-gray-50 transition">
-                <p className="text-xs font-semibold text-red-500 mb-3">{f.num}</p>
-                <h4 className="text-sm font-semibold mb-2">{f.title}</h4>
-                <p className="text-sm text-gray-500 leading-relaxed font-light">{f.desc}</p>
-              </div>
-            ))}
-          </div>
+          <img
+            src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece"
+            className="w-full rounded-3xl border border-black/10"
+            alt="Tech lifestyle"
+          />
         </Container>
-      </section>
+      </Section>
 
-      {/* Story */}
-      <section className="py-20 border-b border-gray-100">
+      {/* STATS */}
+      <Section className="bg-zinc-50 py-20">
         <Container>
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-
-            <div className="bg-gray-50 rounded-2xl aspect-[5/4] overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&auto=format&fit=crop&q=80"
-                alt="Our team at work"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-2">
-                Our journey
-              </p>
-              <h2 className="text-3xl font-serif font-bold mb-5 leading-tight">
-                A story of trust &amp; simplicity
-              </h2>
-              <p className="text-gray-500 text-base leading-relaxed mb-4 font-light">
-                Prime Tech Store started with a mission to simplify technology
-                shopping. We noticed people struggled to find reliable and
-                affordable gadgets — so we built a platform focused on trust,
-                transparency, and quality.
-              </p>
-              <p className="text-gray-500 text-base leading-relaxed font-light">
-                Today, we proudly serve thousands of customers with the latest
-                devices and a seamless shopping experience.
-              </p>
-            </div>
-
-          </div>
-        </Container>
-      </section>
-
-      {/* Stats */}
-      <section className="py-16 border-b border-gray-100">
-        <Container>
-          <p className="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-6">
-            By the numbers
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-gray-100 border border-gray-100 rounded-xl overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             {stats.map((s) => (
-              <div key={s.label} className="py-10 text-center bg-gray-50">
-                <p className="text-4xl font-serif font-bold mb-1">{s.value}</p>
-                <p className="text-xs text-gray-400 tracking-wide font-light">{s.label}</p>
-              </div>
+              <Stat key={s.label} {...s} />
             ))}
           </div>
         </Container>
-      </section>
+      </Section>
 
-      {/* CTA */}
-      <section className="py-24 text-center">
+      {/* FEATURES */}
+      <Section>
         <Container>
-          <p className="text-xs font-semibold tracking-widest uppercase text-red-500 mb-3">
-            Ready to upgrade?
-          </p>
-          <h2 className="text-4xl font-serif font-bold mb-4 leading-tight">
-            Find your next{" "}
-            <em className="italic text-red-500">favorite gadget</em>
-          </h2>
-          <p className="text-gray-500 mb-8 max-w-sm mx-auto font-light text-base">
-            Explore the latest devices and find exactly what suits your needs
-            and budget.
-          </p>
-          <button className="px-8 py-3 bg-red-500 text-white font-medium rounded-md hover:bg-red-600 transition text-sm">
-            Shop Now
-          </button>
-        </Container>
-      </section>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light tracking-tight">
+              Why <span className="text-red-500">Prime Tech</span>
+            </h2>
+          </div>
 
+          <div className="grid md:grid-cols-3 gap-8">
+            {features.map((f) => (
+              <FeatureCard key={f.num} {...f} />
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* STORY */}
+      <Section className="bg-zinc-50">
+        <Container>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <img
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+              className="rounded-3xl border border-black/10 w-full"
+              alt="Our journey"
+            />
+            <div className="space-y-6">
+              <h2 className="text-4xl font-light tracking-tight">
+                Our <span className="text-red-500">Journey</span>
+              </h2>
+              <p className="text-black/70 text-[15px] leading-relaxed">
+                We created Prime Tech to make buying premium technology simple,
+                trustworthy, and enjoyable.
+              </p>
+              <p className="text-black/70 text-[15px] leading-relaxed">
+                What started as a small idea has now grown into a platform
+                trusted by thousands who value quality and transparency.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* PROMISE */}
+      <Section>
+        <Container>
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-4xl font-light tracking-tight text-center">
+              Our <span className="text-red-500">Promise</span>
+            </h2>
+
+            <ul className="space-y-6 max-w-md mx-auto">
+              {promises.map((p) => (
+                <CheckItem key={p} text={p} />
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </Section>
+
+      {/* FINAL CTA */}
+      <Section className="text-center bg-black text-white">
+        <Container>
+          <h2 className="text-5xl font-light tracking-tighter mb-4">
+            Find your next device
+          </h2>
+          <p className="text-white/70 mb-10 max-w-sm mx-auto">
+            Premium gadgets. Honest prices. Exceptional experience.
+          </p>
+          <Button className="bg-red-500 hover:bg-white hover:text-black text-base px-12 py-4">
+            Shop Now
+          </Button>
+        </Container>
+      </Section>
     </div>
   );
 };
